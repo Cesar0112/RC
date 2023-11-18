@@ -17,7 +17,7 @@ def handle_request(connectionSocket):
     
     #si detecta erro manda 404
     except IOError:
-        connectionSocket.send("HTTP/1.1 404 Not Found\r\n\r\n".encode())
+        connectionSocket.send("HTTP/1.1 404 Not Found".encode())
         connectionSocket.close()
 
 def start_server():
