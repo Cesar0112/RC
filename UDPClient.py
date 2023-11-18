@@ -31,7 +31,7 @@ while True:
                 elapsed = end - start
                 print("Time: " + str(elapsed * 1000) + " Milliseconds\n")
             except socket.timeout:
-                print("#" + str(i) + " Requested Time out\n")
+                print("#" + str(i) + " Requested Timeout\n")
     finally:
         print("Finish ping, closing socket")
         mysocket.close()
