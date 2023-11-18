@@ -1,6 +1,6 @@
 #import socket module
 from socket import *
-
+import sys
 #create a tcp server socket
 #AF_INET is used for ipv4 protocol
 #SOCK_STREAM is used for tcp
@@ -32,7 +32,7 @@ while True:
 		#print(filename,'||',filename[1:])
 		
 		# because the extracted path of the request has a / we read from the 2nd char
-		f = open(filename[1:])
+		f = open(filename[1:],"r")
 		outputdata = f.read()
 		#Send one HTTP header line into socket
 		#Fill in start
@@ -49,3 +49,5 @@ while True:
 		connectionSocket.send(bytes('\nHTTP/1.1 404 Not Found\n\n','UTF-8'))
 		connectionSocket.send(bytes('<html><head><title>First Web Page</title></head><body><h1>404 Not Found</h1></body></html>\r\n','UTF-8'))
 		connectionSocket.close()
+	serverSocket.close()
+	sys.exit()
