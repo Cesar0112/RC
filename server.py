@@ -1,4 +1,3 @@
-#import socket module
 from socket import *
 
 #create a tcp server socket
