@@ -11,9 +11,12 @@ def send_http_request(server_host, server_port, file_path):
     # Obtener la respuesta del servidor
     response = conn.getresponse()
 
+    response = response.read().decode()
+    if(response == ""):
     # Imprimir la respuesta del servidor
-    print(response.read().decode())
-
+        print("File not found, Error 404")
+    # else:
+    print(response)
     # Cerrar la conexión
     conn.close()
 

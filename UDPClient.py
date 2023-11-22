@@ -8,7 +8,8 @@ while True:
     print("-------------------------\n")
 
     option = input("Enter you option: ")
-    if option == 0:
+    if option == '0':
+        print("Successfully closed")
         break
     print("-------------------------")
     print("Starting Ping")
